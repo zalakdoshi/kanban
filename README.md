@@ -1,70 +1,106 @@
-# Getting Started with Create React App
+# 📋 Collaborative Kanban Board Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A premium, interactive Kanban Board web application built with **React** that features **Role-Based Access Control (RBAC)**, real-time-like workspace synchronization, user-friendly **Drag-and-Drop** interactions, employee productivity tracking, and a **dynamic Light/Dark theme switch**.
 
-## Available Scripts
+This application was developed as part of an Internship Project, utilizing modern React hooks, Context API for lightweight state management, and HTML5 Drag and Drop API.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## ✨ Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 🔐 Role-Based Access Control (RBAC)
+- Pre-configured user roles with different access levels:
+  - **Admin**: Full control to create, edit, delete, and reassign tasks. Access to employee productivity analytics.
+  - **Employee**: Can view their assigned tasks, drag tasks between columns to update status, and manage their workflow.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 📊 Interactive Kanban Columns
+- Four visual boards for task lifecycles:
+  - 📥 **To Do**: Ready to be worked on.
+  - ⏳ **In Progress**: Tasks currently being worked on.
+  -  **Completed**: Completed tasks.
+  - 📋 **List**: Backlog or general listing of references.
+- Drag & Drop interface for quick, seamless task movements.
 
-### `npm test`
+### 📈 Employee Analytics (Admin Only)
+- Dedicated **Work Tracking Dashboard** for Admins to view task progress statistics, completion ratios, and overall task distribution for employees.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🌓 Dynamic Dark Mode
+- Dark mode toggle that immediately applies a stunning, accessible dark UI theme.
+- Remembers preferences across browser sessions using `localStorage`.
 
-### `npm run build`
+### 💾 Fully Persisted Local Storage
+- Local sessions, tasks, column status, and visual configurations are preserved so you never lose your progress.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🛠️ Tech Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Core**: React 19.x & JavaScript (ES6+)
+- **Routing**: React Router v7
+- **State & Theme Management**: React Context API (`AuthContext`, `TaskContext`, `ThemeContext`)
+- **Querying**: TanStack React Query (v5)
+- **Styling**: Modern CSS Variables & Responsive Flex/Grid Layouts
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🚀 Getting Started
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To get a local copy up and running, follow these simple steps:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Prerequisites
+Make sure you have **Node.js** and **npm** installed on your system.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Installation
+1. Clone this repository to your local machine:
+   ```bash
+   git clone https://github.com/zalakdoshi/kanban.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd kanban_app
+   ```
+3. Install the dependencies:
+   ```bash
+   npm install
+   ```
 
-## Learn More
+### Running the Application
+To run the app in development mode:
+```bash
+npm start
+```
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser. The page will auto-reload when you edit files.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🔑 Predefined Accounts & Logins
 
-### Code Splitting
+Use the following credentials to log in and explore the role-based features:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+| Role | Username | Password | Access Level |
+| :--- | :--- | :--- | :--- |
+| **Admin** | `admin` | `admin123` | Full Access + Employee Work Tracking |
+| **Employee** | `employee` | `emp123` | Individual Kanban Board Task Management |
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📂 Project Structure
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```text
+src/
+├── components/          # Reusable UI Components
+│   ├── Header.jsx       # Navigation, Auth Status, and Theme Toggle
+│   ├── KanbanColumn.jsx # Column Wrapper for Drag/Drop
+│   ├── TaskCard.jsx     # Card component with actions
+│   ├── TaskModal.jsx    # Pop-up for Creating/Editing tasks
+│   └── TrackingModal.jsx# Analytics and productivity graphs
+├── contexts/            # Context API Providers
+│   ├── AuthContext.jsx  # Authentication logic & credentials
+│   ├── TaskContext.jsx  # Task operations and statistics
+│   └── ThemeContext.jsx # Dark/Light theme toggle mechanism
+├── pages/               # Main Page Views
+│   ├── Login.jsx        # Credentials Login screen
+│   └── Dashboard.jsx    # Kanban board view
+├── App.js               # Root layout
+└── AppRoutes.jsx        # Routing configuration
+```
