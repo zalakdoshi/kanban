@@ -4,8 +4,6 @@ A premium, interactive Kanban Board web application built with **React** that fe
 
 🔗 **Live Demo:** [kanbannnn.vercel.app](https://kanbannnn.vercel.app)
 
-This application was developed as part of an Internship Project, utilizing modern React hooks, Context API for lightweight state management, and HTML5 Drag and Drop API.
-
 ---
 
 ## ✨ Features
