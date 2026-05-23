@@ -2,6 +2,8 @@
 
 A premium, interactive Kanban Board web application built with **React** that features **Role-Based Access Control (RBAC)**, real-time-like workspace synchronization, user-friendly **Drag-and-Drop** interactions, employee productivity tracking, and a **dynamic Light/Dark theme switch**.
 
+🔗 **Live Demo:** [kanbannnn.vercel.app](https://kanbannnn.vercel.app)
+
 This application was developed as part of an Internship Project, utilizing modern React hooks, Context API for lightweight state management, and HTML5 Drag and Drop API.
 
 ---
